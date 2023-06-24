@@ -1,0 +1,178 @@
+﻿@using BlogSyStem.Dto;
+@{
+    var loginUser = Session["loginUser"] as UserInfoDto;
+    var imagePath = "";
+    if (loginUser.ImagePath != "" && loginUser.ImagePath != "/HeadPortrait/personal.png")
+    {
+        imagePath = "/HeadPortrait/UserHeadPortait/" + loginUser.ImagePath;
+    }
+    else
+    {
+        imagePath = "/HeadPortrait/personal.png";
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 博客</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("header", required: false)
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+
+        .headportrait {
+            width: 40px;
+            height: 40px;
+            border-radius: 50% 50%;
+            margin: -10px 0 0 0;
+        }
+
+        .navbar-brand {
+            color: white;
+        }
+
+        .dropdown-menu li {
+            text-align: center;
+        }
+
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+            margin: -20px 0 0 0;
+            z-index: 999;
+        }
+
+        .active {
+            color: #fff;
+            background: rgb(0, 0, 0,0.3);
+        }
+    </style>
+</head>
+<body>
+    @if (loginUser != null)
+    {
+        <div class="navbar navbar-default navbar-fixed-top" style="color: #fff; border: none; background: #337ab7; ">
+            <div class="container" style="padding:0;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="~/Home/Index">
+                        <img src="~/favicon.ico" style="margin-top: -15px;" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @*<li class="active">@Html.ActionLink("首页", "Index", "Home")</li>*@
+                        <li>@Html.ActionLink("推荐文章", "ArticleList2", "Article")</li>
+                        <li>@Html.ActionLink("我的分类", "CategoryList", "Article")</li>
+                        <li>@Html.ActionLink("关于", "About", "Home")</li>
+                        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                        @*<li><button class="btn btn-default" style="background:#222;border:none;color:#9d9d9d;margin-top:10px;" onclick="SignOut()">退出登录</button></li>*@
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="height: 50px;">
+                                <img class="headportrait" src="@imagePath" />
+                                @if (@loginUser.NickName.Length > 5)
+                                {
+                                    var nickname = @loginUser.NickName.Substring(0, 5).ToString() + "...";
+                                    <span>@nickname.ToString()</span>
+                                }
+                                else
+                                {
+                                    <span>
+                                        @loginUser.NickName
+                                    </span>
+                                }
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("注销", "Clean", "Home")</li>
+                                <li role="separator" class="divider"></li>
+                                <li>@Html.ActionLink("发布文章", "CreateArticle", "Article")</li>
+                                <li role="separator" class="divider"></li>
+                                <li>@Html.ActionLink("个人信息", "EditUserHeadPortrait", "User", new { id = loginUser.Id }, new { disabled = "disabled" })</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="navbar navbar-default navbar-fixed-top" style="color: #ccc; border: none; background: #337ab7; ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="~/Home/Index">
+                        <img src="~/favicon.ico" style="margin-top: -15px;" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("关于", "About", "Home")</li>
+                        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="line-height:50px;">请登录...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="container" style="height:100%;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 博客</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <script src="~/Scripts/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script>
+        function SignOut() {
+            $.ajax({
+                url: "/Home/Clean",
+                type: "get"
+            }).done(() => {
+                location.reload();
+            });
+        }
+        $(function () {
+            $("ul.nav>li>a").css({ "color": "#fff" });
+            $("ul.nav>li").hover(function () {
+                $(this).children("a").css({ "background": "rgb(0, 0, 0,0.3)" })
+            }, function () {
+                $(this).children("a").css({ "background": "#337ab7" })
+            });
+            var dropdownwidth = $(".dropdown-toggle").innerWidth() + "px";
+            $(".dropdown-menu").css("min-width", dropdownwidth);
+            $(".dropdown-menu>li").css("min-width", dropdownwidth);
+            $(".navbar-brand").mouseover(function () {
+                $(this).css("color", "#fff");
+            });
+        });
+    </script>
+</body>
+</html>

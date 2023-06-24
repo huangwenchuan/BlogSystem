@@ -1,0 +1,11 @@
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\Enumeration\bin\Debug\Enumeration.dll
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\Enumeration\bin\Debug\Enumeration.pdb
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.dll
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.pdb
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.csproj.AssemblyReference.cache
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\Enumeration\bin\Debug\Enumeration.dll
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\Enumeration\bin\Debug\Enumeration.pdb
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.dll
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\Enumeration\obj\Debug\Enumeration.pdb

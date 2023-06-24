@@ -1,0 +1,13 @@
+﻿@using BlogSyStem.Dto;
+@{
+    ViewBag.Title = "首页";
+    var loginName = Session["loginName"] == null ? Request.Cookies["loginName"].Value : Session["loginName"].ToString();
+    var loginUser = Session["loginUser"] as UserInfoDto;
+}
+
+<div class="row">
+    <h2>
+        <strong>@loginUser.NickName</strong>的博客
+    </h2>
+    @*<h2>@ViewBag.NickName</h2>*@
+</div>

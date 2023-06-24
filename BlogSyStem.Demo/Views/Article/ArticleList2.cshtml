@@ -1,0 +1,219 @@
+﻿@*第三方分页开始*@
+@using Webdiyer.WebControls.Mvc;
+@using BlogSyStem.Dto;
+@model Webdiyer.WebControls.Mvc.PagedList<BlogSyStem.Dto.ArticleDto>
+@*第三方分页开始*@
+@{
+    var loginUser = Session["loginUser"] as UserInfoDto;
+    ViewBag.Title = "推荐文章";
+}
+@*第三方分页开始*@
+<div class="row wh">
+    @foreach (var item in Model)
+    {
+        <div class="articleList-row" style="height:110px;">
+            <div class="col-md-12 pnone" style="height:20px;">
+                <a class="articleList-title" href="~/Article/ArticleDeatlis/@item.Id">@item.Title</a>
+            </div>
+            <div class="col-md-12 pnone" style="height:60px;margin-top:5px;">
+                <div class="fl">
+                    @if (item.ImagePath == "/ HeadPortrait / personal.png")
+                    {
+                        <img src="@item.ImagePath" class="articleList-userimage" />
+                    }
+                    else
+                    {
+                        <img class="articleList-userimage" src="/HeadPortrait/UserHeadPortait/@item.ImagePath" />
+
+                    }
+                </div>
+                <div class="fl">
+                    @item.Content
+                </div>
+            </div>
+            <div class="col-md-12 pnone" style="height:20px;padding-bottom:5px;">
+                <div class="fl div-block articleList-span">@item.NickName</div>
+                <div class="fl div-block articleList-span">@item.CreateTime.ToString("yyyy-MM-dd HH:mm")</div>
+                <div class="fl div-block articleList-span">
+                    @if (item.Feel.ToString() == "Good")
+                    {
+                        <button class="glyphicon glyphicon-thumbs-up btn-clean" style="color: #337ab7; background: none;" onclick="btnNoneHandler(this, '@item.Id') "></button>
+                    }
+                    else
+                    {
+                        <button class="glyphicon glyphicon-thumbs-up btn-clean btn-none" style="color: #000;background:none;" onclick="btnGoodHandler(this, '@item.Id')"></button>
+                    }
+                    @item.GoodCount
+                </div>
+                <div class="fl div-block articleList-span">
+                    @if (item.Feel.ToString() == "Bad")
+                    {
+                        <button class="glyphicon glyphicon-thumbs-down btn-clean" style="color: #337ab7; background: none;" onclick="btnNoneHandler(this, '@item.Id') "></button>
+                    }
+                    else
+                    {
+                        <button class="glyphicon glyphicon-thumbs-down btn-clean btn-none" style="color: #000; background: none;" onclick="btnBadHandler(this, '@item.Id')"></button>
+                    }
+                    @item.BadCount
+                </div>
+                <div class="fl div-block articleList-span">
+                    <a class="glyphicon glyphicon-comment btn-none" href="~/Article/ArticleDeatlis/@item.Id" style="color:black;">
+
+                    </a>
+                    @item.CommentVolume
+                </div>
+                <div class="fl div-block articleList-span">
+                    <a class="glyphicon glyphicon-eye-open btn-none" href="~/Article/ArticleDeatlis/@item.Id" style="color:black;">
+
+                    </a>
+                    @item.ReadingVolume
+                </div>
+            </div>
+        </div>
+    }
+
+    <nav>
+        @Html.Pager(Model, new PagerOptions
+        {
+            PageIndexParameterName = "pageIndex",//可以省略
+            ContainerTagName = "ul",
+            CssClass = "pagination",
+            CurrentPagerItemTemplate = "<li class=\"active\"><a herf=\"#\">{0}</a></li>",
+            DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>",
+            PagerItemTemplate = "<li>{0}</li>",
+            Id = "bootstarppager"
+        })
+        @* 当前页码:CurrentPagerItemTemplate  禁用按钮:class=\"disabled\" *@
+    </nav>
+
+    @*<table class="table table-bordered" id="articleList">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreateTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GoodCount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BadCount)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GoodCount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BadCount)
+                        </td>
+
+                        <td class="method">
+                            @if (item.UserId == loginUser.Id)
+                            {
+                                @Html.ActionLink("编辑 |", "EditArticle", new { id = item.Id })
+                            }
+                            <a class="glyphicon glyphicon-eye-open" href="~/Article/ArticleDeatlis/@item.Id"></a>
+                            <span>@item.ReadingVolume</span>
+                            @Html.ActionLink("详情", "ArticleDeatlis", new { id = item.Id })
+                            @if (item.UserId == loginUser.Id)
+                            {
+                                <button class="btn btn-default btn-clean" type="button" onclick="remove(this)" value="@item.Id">| 删除</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>*@
+
+</div>
+@*第三方分页结束*@
+@section header{
+    <link href="~/Content/Article/ArticleList.css" rel="stylesheet" />
+}
+@section Scripts{
+    <script type="text/javascript">
+        function remove(e) {
+            if (confirm("是否删除这篇文章")) {
+                $.ajax({
+                    url: "/Article/DeleteArticle",
+                    type: "post",
+                    data: {
+                        id: e.value
+                    }
+                }).done(() => {
+                    location.reload();//重新定向 重新加载
+                });
+            }
+        }
+        $(function () {
+            $(".btn-none").hover(function () {
+                $(this).css({ "color": "#337ab7", "text-decoration": "none" });
+            }, function () {
+                $(this).css("color", "black");
+            });
+        });
+        function btnGoodHandler(e, id) {
+            var json = {};
+            json.id = id;
+            $.ajax({
+                url: "/Article/GoodCount",
+                type: "post",
+                data: json
+            }).done(() => {
+                location.reload();
+                e.disabled = true;
+            });
+        }
+        function btnBadHandler(e, id) {
+            var json = {};
+            json.id = id;
+            $.ajax({
+                url: "/Article/BadCount",
+                type: "post",
+                data: json
+            }).done(() => {
+                location.reload();
+                e.disabled = true;
+            });
+        }
+        function btnNoneHandler(e, id) {
+            var json = {};
+            json.id = id;
+            $.ajax({
+                url: "/Article/Cancel",
+                type: "post",
+                data: json
+            }).done(() => {
+                location.reload();
+                e.disabled = true;
+            });
+        }
+    </script>
+}

@@ -1,0 +1,19 @@
+{
+  "FilePath": "d:\\Users\\24142\\Desktop\\开发实例\\ASP.NET MVC5\\BlogSyStem\\BlogSyStem.API\\BlogSyStem.API.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

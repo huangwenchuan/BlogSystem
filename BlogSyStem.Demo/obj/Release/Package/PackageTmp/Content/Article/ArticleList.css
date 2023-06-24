@@ -1,0 +1,60 @@
+﻿.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.cl{
+    clear:none;
+}
+.wh{
+    width:100%;
+    height:100%;
+}
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 3px;
+}
+
+.btn-clean {
+    border: none;
+}
+
+    .btn-clean:hover {
+        background: none;
+    }
+
+.method a {
+    color: black;
+}
+
+    .method a:hover {
+        text-decoration: none;
+    }
+.articleList-title{
+    color:#005da6;
+}
+.articleList-userimage{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:1px solid #ccc;
+}
+.articleList-row {
+    width:100%;
+    height:100%;
+    margin-top:15px;
+    border-bottom:1px #ccc solid;
+}
+.pnone{
+    padding:0;
+}
+.div-block {
+    display: block;
+}
+.articleList-span{
+    margin-right:10px;  
+}

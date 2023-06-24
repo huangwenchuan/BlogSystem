@@ -1,0 +1,220 @@
+﻿@model BlogSyStem.Dto.ArticleDto
+
+@{
+    ViewBag.Title = "ArticleDeatlis";
+    var loginUser = Session["loginUser"] as BlogSyStem.Dto.UserInfoDto;
+    var feel = ViewBag.Feel;
+}
+
+<h2>文章详情</h2>
+
+<div>
+    <h4>
+        @Html.DisplayNameFor(model => model.Title)
+    </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @*@MvcHtmlString.Create(Model.Content);*@
+            @Html.Raw(Model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BadCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BadCount)
+        </dd>
+
+        <dt>
+            类别
+        </dt>
+
+        @foreach (var item in Model.CategoryName)
+        {
+            <dd class="categoryNames">
+                @item
+            </dd>
+        }
+    </dl>
+</div>
+
+<div class="col-md-12">
+    @if (feel.ToString() == "Good")
+    {
+        <button class="glyphicon glyphicon-thumbs-up btn-clean" onclick="btnNoneHandler(this) " style="color: #337ab7;"></button>
+    }
+    else
+    {
+        <button class="glyphicon glyphicon-thumbs-up btn-clean" onclick="btnGoodHandler(this)"></button>
+    }
+    @if (feel.ToString() == "Bad")
+    {
+        <button class="glyphicon glyphicon-thumbs-down btn-clean" onclick="btnNoneHandler(this)" style="color: #337ab7;"></button>
+    }
+    else
+    {
+        <button class="glyphicon glyphicon-thumbs-down btn-clean" onclick="btnBadHandler(this)"></button>
+    }
+</div>
+
+<div class="col-md-12">
+    <div class="col-md-3">
+        <label class="pull-left" style="line-height:32px;">评论：</label>
+        <div class="pull-left">
+            <input type="text" class="form-control" name="exampleInputEmail2" id="exampleInputEmail2" placeholder="有趣，有爱，有态度" value="">
+        </div>
+    </div>
+    <div class="col-md-3 pull-left">
+        <button class="btn btn-default" onclick="sendComment(this)">发送</button>
+    </div>
+</div>
+
+<ul class="comment">
+    @foreach (var item in ViewBag.Comments)
+    {
+        <li>
+            <p>@item.NickNamw @item.Email @item.CreateTime</p>
+            <p>@item.Content</p>
+        </li>
+    }
+</ul>
+
+<p>
+    @if (Model.UserId == loginUser.Id)
+    {
+        @Html.ActionLink("编辑 |", "EditArticle", new { id = Model.Id })
+    }
+    @Html.ActionLink("返回", "ArticleList2")
+</p>
+@section header{
+    <style>
+        .categoryNames {
+            float: left;
+            margin: 0px 3px !important;
+        }
+
+        dd img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-clean {
+            background: transparent;
+            border: none;
+        }
+
+        .comment {
+            list-style: none;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script>
+        var articleId = '@Model.Id';
+        //方法一
+        //function btnGoodHandler() {
+        //    $.ajax({
+        //        url: "/Article/GoodCount/"+articleId,
+        //        type: "post"
+        //    }).done(() => {
+        //        this.disable = true;
+        //    });
+        //}
+        //function btnBadHandler() {
+        //    $.ajax({
+        //        url: "/Article/BadCount/" + articleId,
+        //        type: "post"
+        //    }).done(() => {
+        //        this.disable = true;
+        //    });
+        //}
+        var json = {};
+        json.id = articleId;
+        function btnGoodHandler(e) {
+            $.ajax({
+                url: "/Article/GoodCount",
+                type: "post",
+                data: json
+            }).done(() => {
+                location.reload();
+                e.disabled = true;
+            });
+        }
+        function btnBadHandler(e) {
+            $.ajax({
+                url: "/Article/BadCount",
+                type: "post",
+                data: json
+            }).done(() => {
+                location.reload();
+                e.disabled = true;
+            });
+        }
+        function btnNoneHandler(e) {
+            $.ajax({
+                url: "/Article/Cancel",
+                type: "post",
+                data: json
+            }).done(() => {
+                location.reload();
+                e.disabled = true;
+            });
+        }
+
+        function sendComment(e) {
+            $.ajax({
+                url: "/Article/SendComment",
+                type: "post",
+                data: {
+                    Id: '@Model.Id',
+                    Content: document.getElementById("exampleInputEmail2").value
+                }
+            }).done(() => {
+                location.reload();//重新定向 重新加载
+            });
+        }
+    </script>
+}

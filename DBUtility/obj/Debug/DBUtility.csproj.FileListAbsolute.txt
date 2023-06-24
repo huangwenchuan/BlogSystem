@@ -1,0 +1,66 @@
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\bin\Debug\IBatisNet.Common.dll
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\bin\Debug\MySql.Data.dll
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\bin\Debug\System.Data.SQLite.DLL
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\obj\Debug\DBUtility.csprojAssemblyReference.cache
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CopyComplete
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
+C:\Users\Lenovo1\source\repos\PSSDB\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\bin\Debug\IBatisNet.Common.dll
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\bin\Debug\MySql.Data.dll
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\bin\Debug\System.Data.SQLite.DLL
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\obj\Debug\DBUtility.csprojAssemblyReference.cache
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CopyComplete
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
+D:\Users\24142\Desktop\C#\PSSDB\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\bin\Debug\IBatisNet.Common.dll
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\bin\Debug\MySql.Data.dll
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\bin\Debug\System.Data.SQLite.DLL
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\obj\Debug\DBUtility.csprojAssemblyReference.cache
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CopyComplete
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\bin\Debug\DBUtility.dll
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\bin\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\obj\Debug\DBUtility.dll
+D:\Users\24142\Desktop\开发实例\C#\PSSDB\DBUtility\obj\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\bin\Debug\DBUtility.dll
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\bin\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\bin\Debug\IBatisNet.Common.dll
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\bin\Debug\MySql.Data.dll
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\bin\Debug\System.Data.SQLite.DLL
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.AssemblyReference.cache
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\obj\Debug\DBUtility.csproj.CopyComplete
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\obj\Debug\DBUtility.dll
+D:\Users\24142\Desktop\开发实例\winfrom\PSSDB\DBUtility\obj\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\DBUtility.dll.config
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\DBUtility.dll
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\System.Data.SQLite.dll
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\System.Data.SQLite.xml
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.csproj.CopyComplete
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.dll
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\开发实例\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.csproj.AssemblyReference.cache
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\DBUtility.dll.config
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\DBUtility.dll
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\System.Data.SQLite.dll
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\bin\Debug\System.Data.SQLite.xml
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.csproj.CoreCompileInputs.cache
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.csproj.CopyComplete
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.dll
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.pdb
+D:\Users\24142\Desktop\Development\.NET\ASP.NET MVC5\BlogSyStem\DBUtility\obj\Debug\DBUtility.csproj.AssemblyReference.cache

@@ -1,0 +1,165 @@
+﻿@*自定义分页开始*@
+@model IEnumerable<BlogSyStem.Dto.ArticleDto>
+@*自定义分页结束*@
+
+
+@{
+    ViewBag.Title = "我的文章";
+}
+
+<h2>ArticleList1</h2>
+
+<p>
+    @Html.ActionLink("添加文章", "CreateArticle")
+</p>
+@*自定义分页开始*@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CreateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BadCount)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GoodCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BadCount)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "EditArticle", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "ArticleDeatlis", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteArticle", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                <ul class="pagerList">
+                    @if (ViewBag.PageCount < 7)
+                    {
+                        for (int i = 1; i < ViewBag.PageCount + 1; i++)
+                        {
+                            var pageindex = i - 1;
+                            <li><a href="/Article/ArticleList1?pageIndex=@pageindex">@i</a></li>
+                        }
+
+                    }
+                    else
+                    {
+                        if (ViewBag.PageIndex <= 7 / 2)
+                        {
+
+                            for (int i = 1; i < 8; i++)
+                            {
+                                var pageindex = i - 1;
+                                if (i == ViewBag.PageIndex + 1)
+                                {
+                                    <li><a style="color:red;" href="#">@i</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Article/ArticleList1?pageIndex=@pageindex">@i</a></li>
+                                }
+                            }
+
+                        }
+                        else if ((ViewBag.PageCount - ViewBag.PageIndex - 1) <= 7 / 2)
+                        {
+                            for (int i = ViewBag.PageCount - 6; i < ViewBag.PageCount; i++)
+                            {
+                                var pageindex = i - 1;
+                                if (i == ViewBag.PageIndex + 1)
+                                {
+                                    <li><a style="color:red;" href="#">@i</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Article/ArticleList1?pageIndex=@pageindex">@i</a></li>
+                                }
+
+                            }
+
+                        }
+                        else
+                        {
+                            for (int i = ViewBag.PageIndex - 7 / 2 + 1; i <= ViewBag.PageIndex + 7 / 2 + 1; i++)
+                            {
+                                var pageindex = i - 1;
+                                if (i == ViewBag.PageIndex + 1)
+                                {
+                                    <li><a style="color:red;" href="#">@i</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Article/ArticleList1?pageIndex=@pageindex">@i</a></li>
+                                }
+                            }
+
+                        }
+                    }
+                </ul>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+@*自定义分页结束*@
+@section header{
+    <style>
+        ul.pagerList {
+            float: left;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+            ul.pagerList li {
+                width: 50px;
+                height: 50px;
+                float: left;
+                background: #ccc;
+                text-align: center;
+                line-height: 50px;
+                border-radius: 5px;
+                margin-right: 5px;
+            }
+
+                ul.pagerList li a {
+                    font-size: 18px;
+                }
+    </style>
+}
